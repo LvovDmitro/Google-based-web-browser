@@ -33,19 +33,44 @@ namespace Лабораторная_работа__2
 
         private void Web_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-            
+            maintab.SelectedTab.Text = ((WebBrowser)maintab.SelectedTab.Controls[0]).DocumentTitle; // чтобы отображлось название сайта во вкладке
         }
 
         private void searchbutton_Click(object sender, EventArgs e)
         {
             if (addresstextbox.Text != null)
             {
-                ((WebBrowser)maintab.SelectedTab.Controls[0]).Navigate(addresstextbox.Text);
+                ((WebBrowser)maintab.SelectedTab.Controls[0]).Navigate(addresstextbox.Text); //обращение к 0 элементу управления
             }
             else
             {
 
             }
+        }
+
+        private void Gobackbutton_Click(object sender, EventArgs e)
+        {
+            ((WebBrowser)maintab.SelectedTab.Controls[0]).GoBack();
+        }
+
+        private void gonextbutton_Click(object sender, EventArgs e)
+        {
+            ((WebBrowser)maintab.SelectedTab.Controls[0]).GoForward();
+        }
+
+        private void uploadbutton_Click(object sender, EventArgs e)
+        {
+            ((WebBrowser)maintab.SelectedTab.Controls[0]).Refresh();
+        }
+
+        private void stopbutton_Click(object sender, EventArgs e)
+        {
+            ((WebBrowser)maintab.SelectedTab.Controls[0]).Stop();
+        }
+
+        private void toolStripButton7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
